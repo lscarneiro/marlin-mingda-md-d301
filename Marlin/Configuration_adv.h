@@ -1202,8 +1202,8 @@
 // @section lcd
 
 #if ANY(HAS_LCD_MENU, EXTENSIBLE_UI, HAS_DWIN_E3V2)
-  #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60 } // Feedrates for manual moves along X, Y, Z, E from panel
-  #define FINE_MANUAL_MOVE 0.025    // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
+  #define MANUAL_FEEDRATE { 100*60, 100*60, 10*60, 2*60 } // Feedrates for manual moves along X, Y, Z, E from panel
+  #define FINE_MANUAL_MOVE 0.02    // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
   #if IS_ULTIPANEL
     #define MANUAL_E_MOVES_RELATIVE // Display extruder move distance rather than "position"
     #define ULTIPANEL_FEEDMULTIPLY  // Encoder sets the feedrate multiplier on the Status Screen
@@ -1381,7 +1381,7 @@
 
   //#define MEDIA_MENU_AT_TOP               // Force the media menu to be listed on the top of the main menu
 
-  #define EVENT_GCODE_SD_ABORT "G28XY"       // G-code to run on Stop Print (e.g., "G28XY" or "G27")
+  #define EVENT_GCODE_SD_ABORT "G28X\nM84"       // G-code to run on Stop Print (e.g., "G28XY" or "G27")
 
   #if ENABLED(PRINTER_EVENT_LEDS)
     #define PE_LEDS_COMPLETED_TIME  (30*60) // (seconds) Time to keep the LED "done" color before restoring normal illumination
@@ -2922,12 +2922,12 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+  // #define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     160  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    160
-  #define Y_HYBRID_THRESHOLD     160
-  #define Y2_HYBRID_THRESHOLD    160
+  #define X_HYBRID_THRESHOLD     201  // [mm/s]
+  #define X2_HYBRID_THRESHOLD    201
+  #define Y_HYBRID_THRESHOLD     201
+  #define Y2_HYBRID_THRESHOLD    201
   #define Z_HYBRID_THRESHOLD      16
   #define Z2_HYBRID_THRESHOLD     16
   #define Z3_HYBRID_THRESHOLD      3
@@ -2935,7 +2935,7 @@
   #define I_HYBRID_THRESHOLD       3
   #define J_HYBRID_THRESHOLD       3
   #define K_HYBRID_THRESHOLD       3    
-  #define E0_HYBRID_THRESHOLD    100
+  #define E0_HYBRID_THRESHOLD    101
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
   #define E3_HYBRID_THRESHOLD     30
