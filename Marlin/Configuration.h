@@ -635,9 +635,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.0 }
     #define DEFAULT_Kd_LIST { 114.00, 112.0 }
   #else
-    #define DEFAULT_Kp 14.73
-    #define DEFAULT_Ki 1.00
-    #define DEFAULT_Kd 54.31
+    #define DEFAULT_Kp 14.71
+    #define DEFAULT_Ki 1.03
+    #define DEFAULT_Kd 52.34
   #endif
 #endif // PIDTEMP
 
@@ -1021,7 +1021,7 @@
  * Override with M201
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 50, 500 }
+#define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 50, 1000 }
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
 #if ENABLED(LIMITED_MAX_ACCEL_EDITING)
@@ -1037,7 +1037,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  500     // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION  1000     // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
